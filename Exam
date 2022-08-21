@@ -1,0 +1,110 @@
+#include "iostream"
+#include <stdio.h>
+
+
+int main()
+{
+   int age = 0;
+   int money = 0;
+   int lottery = 0;
+   int play = 0;
+   int Account = 123456;
+   int Password = 1234;
+   int CreateAcc;
+   int UserAccount;int UserPwd;int typeofbet;
+   int PLWinner;int D2Winner;
+   int LotteryNumber;int LotteryMoney;
+   
+   
+   
+   
+   printf("Welcome to our Betting Site!! \n");
+
+   printf("What is your age? :: ");
+
+   scanf("%d",&age);
+
+   if (age >= 18){
+        printf("Type 1 to Sign in to Your Account :: Type 2 to Create Your Account\n");
+
+        std::cin >> CreateAcc;
+
+
+        while (CreateAcc == 1){
+            printf("Enter Your User Code :: ");
+            std::cin >> UserAccount;
+            printf("\nEnter Your Password :: ");
+            std::cin >> UserPwd;
+
+
+
+            if (UserAccount == Account && UserPwd == Password){
+                printf("Welcome User :: %d",UserAccount);
+            }
+
+            else
+            {
+                printf("Incorrect User Name or Password\n");
+
+                printf("Try Again");
+            }
+            
+            
+            while (UserAccount == Account)
+            {
+                printf("Try your Luck with Our Betting\n");
+                printf("We have three types of betting");
+                
+                printf("\nFootball :: Dota 2 :: 3 Digits Lottery");
+                
+                printf("\nChoose Your Bet :: Type 1 for Football :: 2 for Dota 2 :: 3 for Lottery\n");
+                
+                std::cin>>typeofbet;
+                
+                
+                
+                switch(typeofbet){
+                    case 1:
+                    printf("1::Manchester United vs Liverpool(23.8.22)\n");
+                    printf("2::Leeds United vs Chelsea\n");
+                    std::cin>>PLWinner;
+                    break;
+                    case 2:
+                    printf("The International 11 Winner :: ");
+                    std::cin>>D2Winner;
+                    break;
+                    case 3:
+                    printf("How Much you want to bet :: ");
+                    std::cin>>LotteryMoney;
+                    printf("Predict 3 Digits Number :: ");
+                    std::cin>>LotteryNumber;
+                    
+                    switch(LotteryNumber){
+                        case 123:
+                        
+                        break;
+                        
+                        case 456:
+                        
+                        break;
+                        
+                        case 891:
+                        
+                        break;
+                    }
+                    break;
+                    
+                }
+                
+                
+            }
+            break;
+        }
+
+   }
+
+   else {
+        printf("You can't take part in betting(due to age restriction!)");
+
+   }
+}
