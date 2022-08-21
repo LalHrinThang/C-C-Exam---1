@@ -12,7 +12,7 @@ int main()
    int Password = 1234;
    int CreateAcc;
    int UserAccount;int UserPwd;int typeofbet;
-   int PLWinner;int D2Winner;
+   char PLWinner;char D2Winner;
    int LotteryNumber;int LotteryMoney;
    
    
@@ -31,7 +31,7 @@ int main()
 
 
         while (CreateAcc == 1){
-            printf("Enter Your User Code :: ");
+            printf("\nEnter Your User Code :: ");
             std::cin >> UserAccount;
             printf("\nEnter Your Password :: ");
             std::cin >> UserPwd;
@@ -39,25 +39,25 @@ int main()
 
 
             if (UserAccount == Account && UserPwd == Password){
-                printf("Welcome User :: %d",UserAccount);
+                printf("\nWelcome User :: %d",UserAccount);
             }
 
             else
             {
                 printf("Incorrect User Name or Password\n");
 
-                printf("Try Again");
+                printf("Try Again\n");
             }
             
             
-            while (UserAccount == Account)
+            while (UserAccount == Account && UserPwd == Password)
             {
                 printf("Try your Luck with Our Betting\n");
-                printf("We have three types of betting");
+                printf("\nWe have three types of betting");
                 
-                printf("\nFootball :: Dota 2 :: 3 Digits Lottery");
+                printf("\n\nFootball :: Dota :: Digits Lottery");
                 
-                printf("\nChoose Your Bet :: Type 1 for Football :: 2 for Dota 2 :: 3 for Lottery\n");
+                printf("\n\nChoose Your Bet :: Type 1 for Football :: 2 for Dota 2 :: 3 for Lottery\n");
                 
                 std::cin>>typeofbet;
                 
@@ -65,8 +65,7 @@ int main()
                 
                 switch(typeofbet){
                     case 1:
-                    printf("1::Manchester United vs Liverpool(23.8.22)\n");
-                    printf("2::Leeds United vs Chelsea\n");
+                    printf("Predict your Premier League Winner for this season");
                     std::cin>>PLWinner;
                     break;
                     case 2:
@@ -81,15 +80,21 @@ int main()
                     
                     switch(LotteryNumber){
                         case 123:
-                        
+                            printf("You win !!");
+                            LotteryMoney = LotteryMoney*3;
+                            printf("\nYou won ::%d\n",LotteryMoney);
                         break;
                         
                         case 456:
-                        
+                            printf("You win !!");
+                            LotteryMoney = LotteryMoney*5;
+                            printf("\nYou won ::%d\n",LotteryMoney);
                         break;
                         
                         case 891:
-                        
+                            printf("You win !!");
+                            LotteryMoney = LotteryMoney*10;
+                            printf("\nYou won ::%d\n",LotteryMoney);
                         break;
                     }
                     break;
@@ -104,7 +109,7 @@ int main()
    }
 
    else {
-        printf("You can't take part in betting(due to age restriction!)");
+        printf("You can't take part in betting due to age restriction!");
 
    }
 }
