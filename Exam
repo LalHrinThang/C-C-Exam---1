@@ -1,7 +1,7 @@
 #include "iostream"
 #include <stdio.h>
-
-
+void OldUser();
+void NewUser();
 int main()
 {
    int age = 0;
@@ -11,9 +11,16 @@ int main()
    int Account = 123456;
    int Password = 1234;
    int CreateAcc;
-   int UserAccount;int UserPwd;int typeofbet;
-   char PLWinner;char D2Winner;
-   int LotteryNumber;int LotteryMoney;
+   int UserRePwd;
+   char NewAcc;
+   int UserNewAccount;
+   int UserAccount;
+   int UserPwd;
+   int typeofbet;
+   char PLWinner;
+   char D2Winner;
+   int LotteryNumber;
+   int LotteryMoney;
    
    
    
@@ -28,26 +35,52 @@ int main()
         printf("Type 1 to Sign in to Your Account :: Type 2 to Create Your Account\n");
 
         std::cin >> CreateAcc;
-
-
-        while (CreateAcc == 1){
-            printf("\nEnter Your User Code :: ");
+        
+        while(CreateAcc!=0){
+            while (CreateAcc == 2){
+            printf("To create an Account, please enter your account in digits number :: ");
             std::cin >> UserAccount;
-            printf("\nEnter Your Password :: ");
+            printf("\nCreate Your Password in digits :: ");
             std::cin >> UserPwd;
+            printf("\nRe-type your password :: ");
+            std::cin >> UserRePwd;
+            
+                if("UserPwd == UserRePwd"){
+                     printf("You successfully create your acc.");
+                        CreateAcc = 1;
+                        NewAcc = 'Yes';
+                        UserAccount = UserNewAccount;
+                }
+                else{
+                    printf("Your passwrod does not match.");
+                }
+        while (CreateAcc == 1 && NewAcc == 'Yes'){
+            
+        printf("\nEnter Your User Code :: ");
+        
+        std::cin >> UserAccount;
+            
+        printf("\nEnter Your Password :: ");
+            
+        std::cin >> UserPwd;
+        
+        while (CreateAcc == 1){
+            
+        printf("\nEnter Your User Code :: ");
+        
+        std::cin >> UserAccount;
+            
+        printf("\nEnter Your Password :: ");
+            
+        std::cin >> UserPwd;
+        
+        
+        
+       
 
 
 
-            if (UserAccount == Account && UserPwd == Password){
-                printf("\nWelcome User :: %d",UserAccount);
-            }
-
-            else
-            {
-                printf("Incorrect User Name or Password\n");
-
-                printf("Try Again\n");
-            }
+            
             
             
             while (UserAccount == Account && UserPwd == Password)
@@ -105,11 +138,48 @@ int main()
             }
             break;
         }
+            
+        
+        
+            
+        
 
    }
+   
+}
+}
 
-   else {
+}
+else {
         printf("You can't take part in betting due to age restriction!");
 
    }
 }
+void OldUser() {
+            int UserAccount,Account,UserPwd,Password;
+            if (UserAccount == Account && UserPwd == Password){
+                printf("\nWelcome User :: %d",UserAccount);
+            }
+
+            else
+            {
+                printf("Incorrect User Name or Password\n");
+
+                printf("Try Again\n");
+            }
+  
+        }
+        
+ void NewUser() {
+            int UserAccount,UserNewAccount,UserPwd,UserRePwd;
+            if (UserAccount == UserNewAccount && UserPwd == UserRePwd){
+                printf("\nWelcome User :: %d",UserAccount);
+            }
+
+            else
+            {
+                printf("Incorrect User Name or Password\n");
+
+                printf("Try Again\n");
+            }
+        }
